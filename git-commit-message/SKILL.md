@@ -22,11 +22,13 @@ You are a Git commit message assistant. Analyze staged changes, collaborate with
 
 **Structure:**
 
+```
 <optional gitmoji> <subject>
 
 <body>
 
 <footer>
+```
 
 **Subject Line:**
 
@@ -67,7 +69,9 @@ Run `git diff --cached` via Bash tool. If the output is empty, inform the user t
 **Step 3: Extract JIRA from branch name**
 
 Run `git branch --show-current` via Bash. Extract a JIRA ID using:
+```
 grep -Eo "[A-Z0-9]{1,10}-?[A-Z0-9]+-[[:digit:]]+"
+```
 If found, auto-populate the appropriate trailer (`Fix:`, `Part-of:`, `Ref:`, or `See:`).
 
 > **⚠️ If no JIRA ID was found in the branch name: you MUST ask the user before proceeding.**
@@ -77,7 +81,6 @@ If found, auto-populate the appropriate trailer (`Fix:`, `Part-of:`, `Ref:`, or 
 **Step 4: Ask user for preferences (conversationally)**
 
 Ask in chat:
-
 - "Would you like a Gitmoji emoji in the commit message?"
 - **Default to asking about motivation — ask unless the diff itself makes the reason unambiguous** (e.g. the code visibly fixes a bug shown directly in the diff, a test failure is self-evident). When in doubt, ask: "What motivated this change?" or "What problem does this solve?" Do not assume motivation from the diff alone; the user almost always has context you lack.
 
@@ -95,7 +98,7 @@ Compose subject, body, and footer per the format rules above.
 
 Pipe the raw assembled message to `~/.agents/skills/git-commit-message/scripts/format-message.sh` via Bash:
 
-bash
+```bash
 cat <<'EOF' | ~/.agents/skills/git-commit-message/scripts/format-message.sh
 <subject line>
 
@@ -103,6 +106,7 @@ cat <<'EOF' | ~/.agents/skills/git-commit-message/scripts/format-message.sh
 
 <footer trailers>
 EOF
+```
 
 Copy the script's **stdout verbatim** as the final message — do not reformat, re-wrap, or alter line breaks. If the script prints a subject-too-long warning on stderr, shorten the subject and re-run.
 
@@ -153,17 +157,20 @@ When the user is amending a commit:
 
 Match the depth of the body to the complexity of the change:
 
-**Simple changes** (1–10 lines, obvious purpose):
+**Simple changes** (1-10 lines, obvious purpose):
 
+```
 Add logging to user authentication flow
 
 Track authentication attempts and failures to make
 troubleshooting login issues easier.
 
 Part-of: CMS-1234
+```
 
 **Medium changes** (10–100 lines, clear refactor/feature):
 
+```
 Extract validation logic into separate module
 
 Inline validation was repeated across three components,
@@ -171,9 +178,11 @@ making updates error-prone. A shared validator module
 reduces duplication and adds unit test coverage.
 
 Part-of: CMS-5678
+```
 
 **Complex changes** (100+ lines, architectural):
 
+```
 Decouple asset search from data store selectors
 
 Introduce a SearchProvider abstraction that allows
@@ -185,6 +194,7 @@ store in tests. Search logic can now be tested
 independently.
 
 Part-of: CMS-9848
+```
 
 **Key principle**: More lines of code ≠ more lines of explanation. Lead with WHAT (intent), then WHY (motivation).
 
@@ -236,7 +246,6 @@ Before writing to `COMMIT_EDITMSG`, confirm:
 **Agent**: _analyzes diff_
 
 "I can see you've:
-
 - Moved `assetSearch.ts` to a new directory
 - Created a `SearchProvider` context
 - Updated several components to use the provider
@@ -255,6 +264,7 @@ Would you like a Gitmoji emoji in the commit message?"
 
 "Done. Here's the message I've written to `.git/COMMIT_EDITMSG`:
 
+```
 ♻️ Decouple asset search from data store selectors
 
 Introduce a SearchProvider abstraction that allows
@@ -266,6 +276,7 @@ store in tests. Search logic can now be tested
 independently.
 
 Part-of: CMS-9848
+```
 
 Review it and let me know if you'd like any changes."
 
