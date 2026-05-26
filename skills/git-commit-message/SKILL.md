@@ -281,7 +281,7 @@ creating tight coupling, or something else?"
 
 "Done. I've written the message to `COMMIT_EDITMSG`. Please review the file and let me know if you'd like any changes."
 
-> [!note] Commit message written to `COMMIT_EDITMSG`:
+> [!NOTE] Commit message written to `COMMIT_EDITMSG`:
 >
 > _Decouple asset search from data store selectors_
 > _Introduce a SearchProvider abstraction that allows_
