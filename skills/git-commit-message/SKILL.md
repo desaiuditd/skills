@@ -286,6 +286,7 @@ creating tight coupling, or something else?"
 > **Commit message written to `COMMIT_EDITMSG`:**
 >
 > _Decouple asset search from data store selectors_
+>
 > _Introduce a SearchProvider abstraction that allows_
 > _different search implementations, replacing the tight_
 > _coupling to Redux selectors._
