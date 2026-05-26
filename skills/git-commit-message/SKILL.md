@@ -284,17 +284,12 @@ creating tight coupling, or something else?"
 > [!note] Commit message written to `COMMIT_EDITMSG`:
 >
 > _Decouple asset search from data store selectors_
->
 > _Introduce a SearchProvider abstraction that allows_
->
 > _different search implementations, replacing the tight_
->
 > _coupling to Redux selectors._
 >
 > _The previous approach required mocking the entire Redux_
->
 > _store in tests. Search logic can now be tested_
->
 > _independently._
 >
 > _Part-of: CMS-9848_
