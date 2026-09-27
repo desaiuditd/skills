@@ -2,8 +2,8 @@
 name: writing-style
 description: >-
   Writing style for all prose: chat replies, markdown, code comments, docs, plan items, open points, summaries, Slack,
-  and PR descriptions. Apply on every written output. Covers sentence length, titles, jargon, emphasis-source, and
-  syntax-relation.
+  and PR descriptions. Apply on every written output. Covers sentence length, titles, jargon, emphasis-source,
+  syntax-relation, and referents.
 ---
 
 # Writing style
@@ -32,6 +32,8 @@ Reason: keep one source for sentence-level rules so `AGENTS.md` can stay a point
   repository must be preserved."
 - **Name the actor.** Do not let a thing do a person's job. "The decision emerged" becomes "the owner closed the RFC."
   "The data tells us" becomes "The logs show X."
+- **Name the referent when more than one is in play.** A pronoun is fine when the surrounding sentences are about one
+  thing, and the reader cannot take it to mean another. When two candidates are open, name the one you mean.
 - **No metaphors, no aphorisms.** Say what's true, not what it's like.
 - **No performative narration.** Don't narrate the doc or reply anywhere — opening or mid-document. Skip "This section
   covers...", "What follows is...", "This doc explains...", "I'll now...". Get straight to the content.
