@@ -12,6 +12,10 @@ Applies to everything you write. Chat replies, markdown, comments, and docs.
 
 Reason: keep one source for sentence-level rules so `AGENTS.md` can stay a pointer.
 
+## Chat replies
+
+For chat replies, give the shortest useful answer in plain spoken language. Add detail only when the user asks.
+
 ## Rules
 
 - **Simple titles.** No complex headings that take a second read to parse. One idea per heading.
@@ -41,7 +45,8 @@ Reason: keep one source for sentence-level rules so `AGENTS.md` can stay a point
   challenge").
 - **No forced connections.** Don't manufacture a link or pattern between separate facts just to make the writing feel
   unified — if two things aren't actually related, don't imply they are.
-- **No dramatic sentences.** No short-for-effect lines, no parallelism deployed for impact.
+- **No dramatic sentences.** A short sentence is fine when it is the answer. Don't write one only for effect. Don't
+  stack matching lines for impact.
 - **No defensive flourish.** Don't pre-empt objections the reader hasn't raised.
 - **No moralising framing.** State the trade-off; don't smuggle in a value judgement.
 - **No labelling-as-validation.** Don't claim rigour ("four reasons survive scrutiny", "the key insight") the reader
