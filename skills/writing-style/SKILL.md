@@ -16,6 +16,10 @@ Reason: keep one source for sentence-level rules so `AGENTS.md` can stay a point
 
 For chat replies, give the shortest useful answer in plain spoken language. Add detail only when the user asks.
 
+If you are checking a flow, a comparison, or a behavior, and a diagram is shorter than the paragraph, use `visualize`
+skill. If you need to operate the behavior, use `prototype` skill. If you need to keep the artifact and come back to it,
+use `canvas` skill. Any other chat reply stays the short answer.
+
 ## Rules
 
 - **Simple titles.** No complex headings that take a second read to parse. One idea per heading.
